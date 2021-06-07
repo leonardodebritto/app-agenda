@@ -1,20 +1,24 @@
 package br.com.app_agenda;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Definindo o texto do app bar - o app bar vem da classe AppCompatActivity
+        setTitle("Student List");
 
         //Simulação de uma lista de alunos - Criando uma lista com Array
         List<String> students = new ArrayList<>(Arrays.asList("Alex", "Fran", "José", "Roberto"));
