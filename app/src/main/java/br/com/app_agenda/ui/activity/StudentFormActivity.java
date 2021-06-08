@@ -38,8 +38,11 @@ public class StudentFormActivity extends AppCompatActivity {
                 Student studentCreated = new Student(name, phone, email);
                 dao.save(studentCreated);
 
+                //Inicializando uma activity a partir de outra
                 startActivity(new Intent(StudentFormActivity.this, StudentListActivity.class));
 
+                //Finalizando a activity
+                finish();
 
         });
     }
