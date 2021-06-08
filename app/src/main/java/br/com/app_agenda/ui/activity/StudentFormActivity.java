@@ -1,24 +1,24 @@
 package br.com.app_agenda.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
 import br.com.app_agenda.DAO.StudentDAO;
 import br.com.app_agenda.R;
 import br.com.app_agenda.model.Student;
 
 public class StudentFormActivity extends AppCompatActivity {
 
+    public static final String APPBAR_TITLE = "New Student";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_form);
+
+        setTitle(APPBAR_TITLE);
 
         StudentDAO dao = new StudentDAO();
 
@@ -31,6 +31,7 @@ public class StudentFormActivity extends AppCompatActivity {
         Button saveButton = findViewById(R.id.activity_student_form_save_button);
         //Implementando o listener para o botão
         saveButton.setOnClickListener((view) -> {
+
                 String name = nameField.getText().toString();
                 String phone = phoneField.getText().toString();
                 String email = emailField.getText().toString();

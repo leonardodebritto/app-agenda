@@ -7,18 +7,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import br.com.app_agenda.DAO.StudentDAO;
 import br.com.app_agenda.R;
-import br.com.app_agenda.model.Student;
 
 public class StudentListActivity extends AppCompatActivity {
+
+    public static final String APPBAR_TITLE = "Student List";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,7 +23,7 @@ public class StudentListActivity extends AppCompatActivity {
         StudentDAO dao = new StudentDAO();
 
         // Definindo o texto do app bar - o app bar vem da classe AppCompatActivity
-        setTitle("Student List");
+        setTitle(APPBAR_TITLE);
 
         //Implementando a funcionalidade no FAB
         FloatingActionButton newStudentButton = findViewById(R.id.activity_student_list_fab_new_student);
